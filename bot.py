@@ -162,7 +162,6 @@ async def start_EU(ctx, member: discord.Member):
             url=
             "https://corporate.faceit.com/wp-content/uploads/logo-full-preview-2.png"
         )
-        embed.add_field(name="Invintation code", value="HE39XW")
 
         await dm.send(embed=embed)
 
