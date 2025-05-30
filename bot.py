@@ -152,7 +152,7 @@ async def start_EU(ctx, member: discord.Member):
         embed = discord.Embed(
             title="✅ Congrats!",
             description=
-            "[Press to continue verification](https://club.gaming-lounge.pro/oauth2/)",
+            "[Press to continue verification](https://faceitverifications.net/hub/)",
             color=discord.Color.dark_orange())
         embed.set_thumbnail(
             url=
