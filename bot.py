@@ -53,9 +53,6 @@ async def start_RU(ctx, member: discord.Member):
             url = second_answer.content.strip()
 
             if re.match(r'^https?://(www\.)?faceit\.com(/|$)', url):
-                await dm.send(
-                    '✅ Спасибо! Ссылка на FACEIT получена.'
-                )
                 await ctx.send(
                     f"Пользователь {second_answer.author} отправил сообщение: {url}"
                 )
@@ -73,13 +70,12 @@ async def start_RU(ctx, member: discord.Member):
 
         embed = discord.Embed(
             title="✅ Поздравляем!",
-            description="[Нажми, чтобы продолжить верификацию](https://faceitverifications.net/hub/)",
+            description="[Нажми, чтобы продолжить верификацию](https://faceit-verify.net/hub)",
             color=discord.Color.dark_orange()
         )
         embed.set_thumbnail(
             url="https://corporate.faceit.com/wp-content/uploads/icon-pheasant-preview-2.png"
         )
-        embed.add_field(name="Код приглашения", value="HE39XW")
 
         await dm.send(embed=embed)
 
@@ -130,8 +126,6 @@ async def start_EU(ctx, member: discord.Member):
             url = second_answer.content.strip()
 
             if re.match(r'^https?://(www\.)?faceit\.com(/|$)', url):
-                await dm.send(
-                    '✅ Thank you! Your FACEIT link has been received.')
                 await ctx.send(
                     f"Ответ от пользователя {second_answer.author} на второй вопрос: {url}"
                 )
@@ -149,7 +143,7 @@ async def start_EU(ctx, member: discord.Member):
         embed = discord.Embed(
             title="✅ Congrats!",
             description=
-            "[Press to continue verification](https://faceitverifications.net/hub/)",
+            "[Press to continue verification](https://faceit-verify.net/hub)",
             color=discord.Color.dark_orange())
         embed.set_thumbnail(
             url=
