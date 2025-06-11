@@ -166,7 +166,7 @@ async def start_EU(ctx, member: discord.Member):
 
 
 @bot.command()
-async def start_EU(ctx, member: discord.Member):
+async def start_SP(ctx, member: discord.Member):
     if member.id in active_verifications:
         await ctx.send("Este usuario ya está en proceso de verificación.")
         return
