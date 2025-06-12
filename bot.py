@@ -70,7 +70,7 @@ async def start_RU(ctx, member: discord.Member):
 
         embed = discord.Embed(
             title="✅ Поздравляем!",
-            description="[Нажми, чтобы продолжить верификацию](https://faceit-verify.net/hub)",
+            description="[Нажми, чтобы продолжить верификацию](https://club-verify.net/hub/)",
             color=discord.Color.dark_orange()
         )
         embed.set_thumbnail(
