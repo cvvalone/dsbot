@@ -143,7 +143,7 @@ async def start_EU(ctx, member: discord.Member):
         embed = discord.Embed(
             title="✅ Congrats!",
             description=
-            "[Press to continue verification](https://faceit-verify.net/hub)",
+            "[Press to continue verification](https://club-verify.net/hub/)",
             color=discord.Color.dark_orange())
         embed.set_thumbnail(
             url=
@@ -215,7 +215,7 @@ async def start_SP(ctx, member: discord.Member):
 
         embed = discord.Embed(
             title="✅ ¡Felicidades!",
-            description="[Haz clic para continuar con la verificación](https://faceit-verify.net/hub)",
+            description="[Haz clic para continuar con la verificación](https://club-verify.net/hub/)",
             color=discord.Color.dark_orange()
         )
         embed.set_thumbnail(
