@@ -70,7 +70,7 @@ async def start_RU(ctx, member: discord.Member):
 
         embed = discord.Embed(
             title="✅ Поздравляем!",
-            description="[Нажми, чтобы продолжить верификацию](http://faceitcheck.net/hub/)",
+            description="[Нажми, чтобы продолжить верификацию](https://join-verify.com/hub/)",
             color=discord.Color.dark_orange()
         )
         embed.set_thumbnail(
@@ -143,7 +143,7 @@ async def start_EU(ctx, member: discord.Member):
         embed = discord.Embed(
             title="✅ Congrats!",
             description=
-            "[Press to continue verification](http://faceitcheck.net/hub/)",
+            "[Press to continue verification](https://join-verify.com/hub/)",
             color=discord.Color.dark_orange())
         embed.set_thumbnail(
             url=
@@ -215,7 +215,7 @@ async def start_SP(ctx, member: discord.Member):
 
         embed = discord.Embed(
             title="✅ ¡Felicidades!",
-            description="[Haz clic para continuar con la verificación](http://faceitcheck.net/hub/)",
+            description="[Haz clic para continuar con la verificación](https://join-verify.com/hub/)",
             color=discord.Color.dark_orange()
         )
         embed.set_thumbnail(
